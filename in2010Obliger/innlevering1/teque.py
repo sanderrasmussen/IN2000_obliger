@@ -9,7 +9,7 @@ class Teque:
         self.liste.append(x)
     
     def push_front(self, x):
-        self.liste.insert(x,0)
+        self.liste.insert(0,x)
 
     def push_middle(self, x):
         k = len(self.liste)
@@ -17,16 +17,40 @@ class Teque:
         self.liste.insert(midt_i, x)
         
     def get_i(self,i):
-        return self.liste[i]
+        print(self.liste[i])
     
     def printListe(self):
         print(self.liste)
     
-teque = Teque()
 
-teque.push_front(1)
-teque.push_back(3)
-teque.push_middle(2)
-teque.push_middle(5)
-teque.push_middle(6)
-teque.printListe()
+class hovedprogram():
+
+    def kjor(self):
+        teque = Teque()
+
+        while True:
+            inp = input()
+        
+            match inp:
+                case "":
+                    break
+
+                case None:
+                    break
+            
+            kommando=inp.split(" ")[0]
+            argument = int(inp.split(" ")[1])
+            
+            match kommando:
+                case "push_front":
+                    teque.push_front(argument)
+                case "push_middle":
+                    teque.push_middle(argument)
+                case "push_back":
+                    teque.push_back(argument)
+                case "get_i":
+                    teque.get_i(argument)
+
+
+program = hovedprogram()
+program.kjor()
