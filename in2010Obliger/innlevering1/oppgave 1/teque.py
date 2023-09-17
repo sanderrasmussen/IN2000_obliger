@@ -27,30 +27,35 @@ class hovedprogram():
 
     def kjor(self):
         teque = Teque()
+        antallOperasjoner = int(input())
+        operasjoner = []
 
-        while True:
+        for i in range(0,antallOperasjoner): #o(n)
             inp = input()
-        
-            match inp:
-                case "":
-                    break
+            operasjoner.append(inp)
 
-                case None:
-                    break
+
+        for i in range(0, len(operasjoner)): #o(n)
+        
+            inp = operasjoner[i]
+        
+            if inp== "":
+                break
+
+            elif inp== None:
+                break
             
             kommando=inp.split(" ")[0]
             argument = int(inp.split(" ")[1])
             
-            match kommando:
-                case "push_front":
-                    teque.push_front(argument)
-                case "push_middle":
-                    teque.push_middle(argument)
-                case "push_back":
-                    teque.push_back(argument)
-                case "get_i":
-                    teque.get_i(argument)
-
-
+            if kommando== "push_front":
+                teque.push_front(argument)
+            if kommando== "push_middle":
+                teque.push_middle(argument)
+            if kommando== "push_back":
+                teque.push_back(argument)
+            if kommando== "get":
+                teque.get_i(argument)
+        
 program = hovedprogram()
 program.kjor()

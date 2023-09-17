@@ -1,0 +1,26 @@
+opggave 1
+a) Jeg velger å bruke python lister for å utføre dette og koden blir derfor lettere.
+# python kode er allerede nesten psudokode så skriver psudokoden med python syntaks.
+def push_back(x):
+    self.liste.append(x)
+    
+push_front(x):
+    self.liste.insert(0,x)
+
+push_middle(x):
+    k = len(self.liste)
+    midt_i = math.floor((k+1)/2)
+    self.liste.insert(midt_i, x)
+        
+get (i):
+    print(self.liste[i])
+
+b) 
+koden ligger i teque.py 
+
+c) 
+verste-tilfelle kjøretidsanalyse med store O notasjon blir O(n) fordi jeg skrev ikke nestede for-loops som har den største kjøretiden
+
+d)Dersom N er begrenset må vi ta høyde for at det verste-tilfelle kjøretids scenarioet vil bli den største verdien av N. Da får kan vi kansje heller ikke droppe konstanter i O notasjonen.
+Det er viktig å fjerne begrensningen på N slik at vi kan se hvordan algorytmen vil oppføre seg på en vilkårlig valgt N.
+
