@@ -4,6 +4,7 @@ import insertion
 import merge
 import math
 import time
+# OBS: her lar jeg filen stå uendret slik jeg lastet den ned fra resurssiden 
 
 # The student can adjust these parameters to conduct their experiments
 

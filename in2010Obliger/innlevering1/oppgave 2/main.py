@@ -1,6 +1,7 @@
 import sort_runner
 import sys
 
+# her lar jeg filen stå uendret slik jeg lastet den ned fra resurssiden 
 def main(filename):
     with open(filename, 'r') as f:
         A = [int(x) for x in f.readlines()]
