@@ -1,4 +1,4 @@
-package innlevering2;
+
 
 public class tre<T> {
     node<T> rot; //startnode
@@ -142,7 +142,7 @@ public class tre<T> {
            forelderNode.settVenstreBarn(settInn(forelderNode.hentVenstre(),x));
            forelderNode.hentVenstre().settForelder(forelderNode);
         }
-        else if (!forelderNode.erStorre(x)){
+        else if (forelderNode.erMindre(x)){//her er feilen
             forelderNode.settHoyreBarn(settInn(forelderNode.hentHoyre(), x));
             forelderNode.hentHoyre().settForelder(forelderNode);
         }

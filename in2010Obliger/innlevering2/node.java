@@ -1,4 +1,4 @@
-package innlevering2;
+
 
 public class node<T> implements Comparable<T> {
     T innhold;
@@ -61,6 +61,9 @@ public class node<T> implements Comparable<T> {
     }
     public boolean erStorre(T annen){ //hjelpemetode
         return (this.compareTo(annen)==1);
+    }
+    public boolean erMindre(T annen){
+        return (this.compareTo(annen)==-1);
     }
 
     public boolean loevNode(){ //hjelpemetode
