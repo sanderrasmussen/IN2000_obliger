@@ -119,13 +119,13 @@ public class tre<T> {
         if (startNode == null){
             return false; //da maa treet vaere tomt
         }
-        if (startNode.hentInnhold()==maalElement){
+        if (startNode.hentInnhold().equals(maalElement)){
             return true;
         }
         if (startNode.erStorre(maalElement)){
             return contains(startNode.hentVenstre(), maalElement);
         }
-        if (!startNode.erStorre(maalElement)){
+        if (startNode.erMindre(maalElement)){
             return contains(startNode.hentHoyre(), maalElement);
         }
         return false;
