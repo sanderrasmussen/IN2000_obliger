@@ -24,7 +24,7 @@ public class tre<T> {
         if (startNode == null){
             return null; 
         }
-        if (startNode.hentInnhold()==element){//basisteg
+        if (startNode.hentInnhold().equals(element)){//basisteg
             return startNode;
         }
         if (startNode.erStorre(element)){
@@ -66,7 +66,7 @@ public class tre<T> {
             //naa skal minste noden slettes
             //to cases: 
             //1: dersom noden som skal slettes er hoyrebarn
-            if (minste.hentForelder()!=rot){
+            if (!minste.hentForelder().equals(rot)){
                 minste.hentForelder().settVenstreBarn(minste.hentHoyre());
             }
             //2: dersom noden som skal slettes er hoyrebarn.venstrebarn
@@ -88,7 +88,7 @@ public class tre<T> {
             return null;
         }
         //dersom rotnoden er den som skal fjernes
-        if(rot.hentInnhold()==element){
+        if(rot.hentInnhold().equals(element)){
             fjernRotNode();
         }
 

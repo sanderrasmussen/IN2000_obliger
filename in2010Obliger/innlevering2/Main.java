@@ -7,6 +7,7 @@ public class Main{
     public static void main (String[] args){
         //java Main inputFiler/eksempel_input.txt outputFiler/eksempel_output.txt
         //java Main inputFiler/input_10.txt outputFiler/output_10.txt
+        //java Main inputFiler/input_100.txt outputFiler/output_100.txt
         tre<Integer> treet= new tre<Integer>();
         
         
