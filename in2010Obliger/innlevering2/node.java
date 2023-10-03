@@ -5,9 +5,17 @@ public class node<T> implements Comparable<T> {
     node<T> venstreBarn;
     node<T> hoyreBarn;
     node<T> forelder;
+    int hoyde=0;
 
     public node(T innhold){
         this.innhold= innhold;
+    }
+    public void settHoyde(int hoyde){
+        this.hoyde= hoyde;
+        
+    }
+    public int hentHoyde(){
+        return this.hoyde;
     }
     public void settForelder(node<T> forelder){
         this.forelder= forelder;
@@ -16,6 +24,12 @@ public class node<T> implements Comparable<T> {
         return forelder;
     }
 
+    public int dybde(node<T> node){
+        if (node==null){
+            return -1;
+        }
+        return 1+ dybde(node.forelder);
+    }
 
     public void settVenstreBarn(node<T> node){
         venstreBarn= node;
