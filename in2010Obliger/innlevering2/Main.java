@@ -1,5 +1,6 @@
 
-
+//notater
+//OOPS husk å fikse size metoden og optdatere variabler istendenfor å hele tiden loope igjennom treet
 import java.util.ArrayList;
 
 public class Main{
@@ -86,7 +87,7 @@ public class Main{
                     System.out.println(tre.calcSize(tre.hentRot()));
                     String output = output_data.get(outputLinje)[0];
                     outputLinje+=1;
-                    if (tre.size()!=Integer.parseInt(output)){
+                    if (tre.calcSize(tre.hentRot())!=Integer.parseInt(output)){
                         System.out.println("input og output ikke like");
                         antallFeil+=1;
                     }
