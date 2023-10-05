@@ -1,0 +1,29 @@
+løser med rekursjon
+
+funkjson: skriv ut i riktig rekkefølge slik at treet er balansert om det skulle vært tall insert i binærtre
+
+    start på funkjson, tar inn array/liste/arraylist som parameter og returnerer det samme
+
+    if array størrelse ==0 eller array==null
+        return null 
+
+    if array sin størrelse <=2 
+        skriv ut alle elementer i arrayen 
+
+        returner arrayen
+
+    else 
+        finn midterste element: midterst = (array størrelse/ 2)rundet ned til nærmeste heltall
+
+        venstre subtre = ny array med index fra 0 til midterste index
+        høyre subtre = ny array med index start fra midterste index + 1 til index:array sin størrelse
+
+        //kaller metodene skriv ut på høyre og venstre subtre
+
+        skrivut(venstre subtre)
+        skriv ut (høyre subtre)
+
+        return null //avslutter funksjonen
+
+    
+    

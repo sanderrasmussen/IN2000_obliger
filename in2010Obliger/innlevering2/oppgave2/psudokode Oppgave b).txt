@@ -1,0 +1,38 @@
+I denne oppgaven bruker jeg samme tanke som i oppgave a), men istedenfor array/arraylist bruker jeg prioritetskø/heap
+
+
+funkjson: skriv ut i riktig rekkefølge slik at treet er balansert om det skulle vært tall insert i binærtre
+
+    start på funkjson, tar inn array/liste/arraylist som parameter og returnerer det samme
+
+    if heap størrelse ==0 eller heap==null
+        return null 
+
+    if heap sin størrelse <=2 
+        skriv ut alle elementer i heapen 
+
+        returner heap
+
+    else 
+        finn midterste element: midterst = (heap størrelse/ 2)rundet ned til nærmeste heltall
+
+        venstre subtre = ny heap
+
+        i = 0
+        while i < midterst 
+            venstre subtre push ( heap.pop() )
+            i+=1
+         
+        //printer ut midterste element g fjerner det fra heapen
+        print ut heap.pop() 
+
+        hoyre subtre = heap
+
+        skrivUt(venstre subtre) //kaller funksjonen rekursivt på alle subtrær
+        skrivUt(hoyre subtre)
+
+        return / Avslutt
+        //avsutter funksjonen
+
+    
+    

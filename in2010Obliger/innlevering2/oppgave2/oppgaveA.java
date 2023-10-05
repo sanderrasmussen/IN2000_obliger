@@ -15,13 +15,13 @@ public class oppgaveA{
             }
             return array;    
         }
-     
+
         else if (array.size()>=3){ //splitter array i to og printer ut midterste element
+
             int middle= (int) Math.floor(array.size()/2) ;
-              System.out.println("size: " +array.size());
+           
             System.out.println(array.get(middle));
 
-        
             ArrayList<Integer> venstreSubTre = new ArrayList<Integer> (array.subList(0, middle));
             ArrayList<Integer> hoyreSubTre = new ArrayList<Integer> (array.subList(middle +1 , array.size()));
 
