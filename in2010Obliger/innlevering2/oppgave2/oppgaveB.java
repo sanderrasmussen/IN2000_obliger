@@ -1,7 +1,19 @@
 
+
 import java.util.PriorityQueue;
 
 public class oppgaveB {
+
+    public static void main(String[] args){
+
+        PriorityQueue<Integer> tall = new PriorityQueue<Integer>();
+        for (int i = 0; i< args.length; i++){
+            tall.add((Integer.parseInt(args[i])));
+        }
+            oppgaveB.skrivUt(tall);
+            //oppgaveB.skrivUt(tall);
+    }
+    
     
     public static PriorityQueue<Integer> skrivUt(PriorityQueue<Integer> queue){
         

@@ -1,6 +1,15 @@
 import java.util.ArrayList;
 
+
 public class oppgaveA{
+
+    public static void main(String[] args){
+        ArrayList<Integer> sekvens = new ArrayList<>();
+        for (int i = 0; i< args.length; i++){
+            sekvens.add((Integer.parseInt(args[i])));
+        }
+            skrivUt(sekvens);
+    }
 
 
 
