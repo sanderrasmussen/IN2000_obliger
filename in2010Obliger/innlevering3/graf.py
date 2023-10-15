@@ -28,17 +28,6 @@ class graf:
         return dataList
 
 
-        movieData = open(movieFile, "r")
-        actorData = open(actorsFile, "r")
-        alldata = movieData.read()  + actorData.read()
-        self.inputLines = alldata
-        #print(alldata)
-        return alldata
-
-
-
-
-
     def buildGraph(self, inputLines):
         V = set()  #noder
         E = defaultdict(set) #kanter
