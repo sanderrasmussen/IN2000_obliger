@@ -3,14 +3,14 @@ class node:
     #Lager variabler for baade film og skuespiller slik at vi senere kan velge aa kun bruke en av de alt etter hva noden holder paa
     
     #film vaariabler
-    tt_id = None
-    tittel = None
+    tt_id = ""
+    tittel = ""
     rating = None
     antallStemmer=None
 
     #actor variabler
-    nm_id= None
-    navn = None
+    nm_id= ""
+    navn = ""
     tt_id_list = []
 
     #type er actor eller movie
@@ -18,11 +18,11 @@ class node:
     edgesAmount= 0
 
 
-    def insertActor(self,nm_id,navn, tt_id_list):
+    def insertActor(self,nm_id_in,navn_in, tt_id_list_input):
         self.type="actor"
-        self.nm_id = nm_id
-        self.navn = navn
-        self.tt_id_list = tt_id_list
+        self.nm_id = nm_id_in
+        self.navn = navn_in
+        self.tt_id_list = tt_id_list_input
 
     def get_tt_id_list(self):
         return self.tt_id_list
@@ -30,15 +30,18 @@ class node:
     def get_rating(self):
         return self.rating
 
-    def insertMovie(self, tt_id , tittel, rating, antallStemmer):
+    def insertMovie(self, tt_id_in , tittel_in, rating_in, antallStemmer_in):
         self.type = "movie"
-        self.tt_id = tt_id
-        self.tittel = tittel
-        self.rating = rating 
-        self.antallStemmer= antallStemmer
+        self.tt_id = tt_id_in
+        self.tittel = tittel_in
+        self.rating = rating_in
+        self.antallStemmer= antallStemmer_in
 
     def get_tt_id(self):
         return self.tt_id
+
+    def get_nm_id(self):
+        return self.nm_id
 
     def isActor(self):
         if self.type=="actor":
@@ -51,4 +54,5 @@ class node:
         return False
 
 
-    
+    def __lt__(self, other):
+        return True

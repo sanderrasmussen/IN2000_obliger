@@ -14,5 +14,20 @@ graf = graf()
 inputData = graf.readFiles(pathMovie,pathActor)
 
 G = graf.buildGraph(inputData)
-
+#print(list(graf.V)[0].tt_id)
+#print(list(graf.V)[0].tittel)
+#print(list(graf.V)[0].isMovie())
 graf.countNodesAndEdges()
+#for v in list(graf.E[graf.idTilNode["nm2255973"]]):
+#    print(v.isActor())
+
+#print(graf.idTilNode["nm0001859"].navn)
+print(graf.shortest_path("nm2255973" , "nm0000460"))
+print("\n")
+print(graf.shortest_path("nm0424060" , "nm8076281"))
+print("\n")
+print(graf.shortest_path("nm4689420" , "nm0000365"))
+print("\n")
+print(graf.shortest_path("nm0000288" , "nm2143282"))
+print("\n")
+print(graf.shortest_path("nm0637259" , "nm0931324"))
