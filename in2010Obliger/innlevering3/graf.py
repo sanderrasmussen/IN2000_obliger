@@ -2,9 +2,11 @@ from collections import defaultdict
 import csv
 import heapq
 from node import node
+from collections import deque
+import sys
 
 class graf:
-
+   
     V = set()  #noder
     E = defaultdict(set) #kanter
     w = dict() #vekt
@@ -96,6 +98,7 @@ class graf:
         V, E ,w = G
         queue = []
         heapq._heapify_max(queue)
+
         heapq.heappush(queue, (0,s))
         dist = defaultdict(lambda: float("inf"))
         dist[s] = 0
@@ -109,7 +112,7 @@ class graf:
             
             for v in E[u]: # for alle kanter fra v
                 if v!=None:
-                    c = cost + w[(u,v)] 
+                    c = cost + (10-w[(u,v)])
                     if c < dist[v]:
                         dist[v] = c
                         heapq.heappush(queue, (c,v))
@@ -118,6 +121,48 @@ class graf:
         return dist, parents
     
     def shortest_path(self, FromId, ToId):
+        #må finne node av navnene som er inputs
+        FromNode = self.idTilNode[FromId]
+        ToNode = self.idTilNode[ToId]
+
+        parents = self.shortest_pathBFS( self.G, FromNode, ToNode)
+
+        #print(dist[ToNode])
+        Node =ToNode
+        
+        output = ToNode.navn
+        while parents[Node]!=None:
+            Node = parents[Node]
+            if Node.isMovie():
+                output = "[ " + Node.tittel  +  " ("+ str(Node.rating) +") " + "]" + "\n" +"===>" + output
+            else:
+                output =  Node.navn  + "==="+ output
+        #output= FromNode.navn + output
+        return output
+    
+    def shortest_pathBFS(self, G,s, target):
+        #gjør bfs
+        queue = deque([s])
+        visited = set()
+        parents= {s: None}
+        visited.add(s)
+        
+        V, E, w = G
+        while queue:
+            k = queue.popleft()
+            
+            for u in E[k]:
+                if u not in visited and u!=None:
+                    visited.add(u)
+                    queue.append(u)
+                    parents[u]=k
+                if u==(target):
+                    print("target found " + u.navn)
+                    return parents
+                
+        return parents
+
+    def chillest_path(self, FromId, ToId):
         #må finne node av navnene som er inputs
         FromNode = self.idTilNode[FromId]
         ToNode = self.idTilNode[ToId]
@@ -136,6 +181,138 @@ class graf:
                 output =  Node.navn  + "==="+ output
         #output= FromNode.navn + output
         return output
+
+
+    #oppgave 4
+    # bruker breddesøk for å finne ut om graf er sammenhengende, deretter så gjør jeg det samme på alle noder som ikke var med i det forgje breddesøket
+
+    def find_Components(self, G):
+        V,E,w = G
+        # lager en metode som returnerer set med nodene til en komponent
+
+        def DFSvisitRecursive(self, G, visit, visited): #denne metoden funer bare på mindre grafer pga at python har lav recursion limit
+            V ,E ,w = G
+            if visited==None:
+                visited = set()
+
+            for v in E[visit]:
+                if v not in visited:
+                    visited.add(v)
+                    DFSvisitRecursive(self, G, v, visited)
+            return visited
+        
+        def DFSvisitCallStack(self, G, s):
+            V, E, w = G
+            visited = set()
+            stack = [s]
+        
+            while stack:
+                u = stack.pop()
+
+                if u not in visited:
+                    visited.add(u)
+        
+                    for v in E[u]:
+                        stack.append(v)
+            return visited
+
+
+
+        #går igjennom alle komonenter
+        componenter = []
+        masterSet = V
+        visited = set()
+        sizes = defaultdict(int)
+
+        while masterSet:
+         
+            visit = masterSet.pop()
+        
+            resultSet = DFSvisitCallStack(self, G, visit)
+
+            sizes[len(resultSet)] += 1
+
+            componenter.append(resultSet)
+            visited = resultSet | visited
+            masterSet = masterSet - visited
+            print(len(masterSet))
+            print(len(componenter))#testing
+        
+        for key,value in sizes.items():
+            print("det er " + str(value) + " componenter av storrelse: "+  str(key) + " : " )
+
+    def count_Components(self, G):
+        V,E,w = G
+        visited = set()
+
+        components = 0
+            
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    def DFSvisit(self, u, visited):
+        visited.add(u)
+        for (u,v) in self.E:
+            if v not in visited:
+                self.DFSvisit(v, visited)
+        return visited
+
+    def DFSfull(self, u):
+        visited = []
+        for (u, v) in self.E:
+            if v not in visited:
+                self.DFSvisit(v, visited)   
+        return visited
+
+    def DFSrecursive(self, v , visited=None):
+        if visited== None:
+            visited = set()
+        for (v, u) in self.E:
+            if u not in visited:
+                self.DFSrecursive(u, visited)
+        return visited
+        
+    def BFSvisit(self, u, visited=None):
+        if visited == None:
+            visited =set()
+        queue = [u]
+        while queue:
+            u = queue.pop()
+            for (u, v) in self.E:
+                if v not in visited:
+                    queue.append(v)
+                    visited.append(v)
+
+    def BFSfull(self):
+        visited= set()
+        for node in self.V:
+            if node not in visited:
+                self.BFSvisit(node, visited)
+
+
 
 
 
