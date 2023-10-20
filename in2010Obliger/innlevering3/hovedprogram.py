@@ -22,7 +22,7 @@ graf.countNodesAndEdges()
 #    print(v.isActor())
 
 #print(graf.idTilNode["nm0001859"].navn)
-""" 
+
 print("\n")
 print(" ---     shortest path     --- ")
 print("\n")
@@ -47,6 +47,6 @@ print("\n")
 print(graf.chillest_path("nm0000288" , "nm2143282"))
 print("\n")
 print(graf.chillest_path("nm0637259" , "nm0931324"))
-"""
+
 
 graf.find_Components(graf.G)

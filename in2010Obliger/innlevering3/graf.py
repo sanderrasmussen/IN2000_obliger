@@ -203,17 +203,19 @@ class graf:
         
         def DFSvisitCallStack(self, G, s):
             V, E, w = G
+            
             visited = set()
             stack = [s]
         
             while stack:
                 u = stack.pop()
 
-                if u not in visited:
+                if u not in visited and u!=None:
                     visited.add(u)
-        
+
                     for v in E[u]:
-                        stack.append(v)
+                        if v not in visited:
+                            stack.append(v)
             return visited
 
 
@@ -222,21 +224,20 @@ class graf:
         componenter = []
         masterSet = V
         visited = set()
-        sizes = defaultdict(int)
+        sizes = defaultdict(lambda:0)
 
         while masterSet:
-         
+          
             visit = masterSet.pop()
+            if visit in visited:
+                continue
         
             resultSet = DFSvisitCallStack(self, G, visit)
-
             sizes[len(resultSet)] += 1
 
             componenter.append(resultSet)
-            visited = resultSet | visited
-            masterSet = masterSet - visited
-            print(len(masterSet))
-            print(len(componenter))#testing
+            masterSet = masterSet - resultSet
+
         
         for key,value in sizes.items():
             print("det er " + str(value) + " componenter av storrelse: "+  str(key) + " : " )
@@ -301,6 +302,8 @@ class graf:
         queue = [u]
         while queue:
             u = queue.pop()
+            if u in visited:
+                continue
             for (u, v) in self.E:
                 if v not in visited:
                     queue.append(v)

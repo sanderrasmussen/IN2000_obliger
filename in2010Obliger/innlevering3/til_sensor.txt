@@ -1,1 +1,2 @@
-grunnen til at min utskrift gir flere noder er at jeg teller både filmnoder og skuespiller noder, imens utskriftseksempelet i oppgaveteksten ser ut som at det kun lagrer actors som noder
+oppgave 1 : grunnen til at min utskrift gir flere noder er at jeg teller både filmnoder og skuespiller noder, imens utskriftseksempelet i oppgaveteksten ser ut som at det kun lagrer actors som noder
+
