@@ -1,2 +1,4 @@
 oppgave 1 : grunnen til at min utskrift gir flere noder er at jeg teller både filmnoder og skuespiller noder, imens utskriftseksempelet i oppgaveteksten ser ut som at det kun lagrer actors som noder
 
+oppgave 4: jeg får andre resultater enn det oppgavepdfen viser, dette er kansje fordi jeg teller både filnoder og skuespiller noder i komponentene. 
+Jeg testet metoden på marvel settet og jeg får et resultat som ser riktig ut, altså to komponenter, med størrelse 34 og 2. Det er totalt 36 noder i denne grafen når den bygges i mitt program.

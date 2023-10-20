@@ -242,38 +242,10 @@ class graf:
         for key,value in sizes.items():
             print("det er " + str(value) + " componenter av storrelse: "+  str(key) + " : " )
 
-    def count_Components(self, G):
-        V,E,w = G
-        visited = set()
-
-        components = 0
-            
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
+    # bruker til hjelp når jeg skal implementere andre metoder
+    # fra forelesning:
+    """
     def DFSvisit(self, u, visited):
         visited.add(u)
         for (u,v) in self.E:
@@ -315,7 +287,7 @@ class graf:
             if node not in visited:
                 self.BFSvisit(node, visited)
 
-
+"""
 
 
 

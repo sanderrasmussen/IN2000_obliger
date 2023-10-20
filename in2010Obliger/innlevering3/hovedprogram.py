@@ -14,14 +14,9 @@ graf = graf()
 inputData = graf.readFiles(pathMovie,pathActor)
 
 G = graf.buildGraph(inputData)
-#print(list(graf.V)[0].tt_id)
-#print(list(graf.V)[0].tittel)
-#print(list(graf.V)[0].isMovie())
-graf.countNodesAndEdges()
-#for v in list(graf.E[graf.idTilNode["nm2255973"]]):
-#    print(v.isActor())
 
-#print(graf.idTilNode["nm0001859"].navn)
+graf.countNodesAndEdges()
+
 
 print("\n")
 print(" ---     shortest path     --- ")
