@@ -11,7 +11,7 @@ class hashSet():
         return self.n /self.N
     
     def Hash_function(self, number):
-        hash =(number * 2654435761) % self.N
+        hash =(number * 31) % self.N
         return hash
     
     def ensure_size(self):
@@ -29,7 +29,7 @@ class hashSet():
                 if oldArray[i]!=None and oldArray[i] not in self.Array:
                     self.insert(oldArray[i])
 
-
+        #print("rehash------")
 
     def insert(self, numb):
         if numb==None:
@@ -83,21 +83,26 @@ class hashSet():
 
     def fill_gap(self, i):
 
-        s = 1
+        d = 1
 
-        while self.Array[(i+s)%self.N] != None:
-        
-            hash = self.Hash_function((i+s)%self.N)
+        while self.Array[(i+d)%self.N] != None:
+            
+            el = self.Array[(i+d)%self.N]
+            hash = self.Hash_function(el)
 
-            if hash <= i:
+            if not (0<(hash-i)%self.N<=d):
 
-                self.Array[i] =  self.Array[(i+s) %self.N]    
-                self.Array[(i+s)%self.N] = None
-                self.fill_gap((i+s)%self.N)
-              
+                self.Array[i] =  el
+                self.Array[(i+d)%self.N] = None
+                self.fill_gap((i+d)%self.N)
+                
                 return
-            s+=1
+            d+=1
+        return
+      
 
+    
+        
 
     def size(self):
         return self.n

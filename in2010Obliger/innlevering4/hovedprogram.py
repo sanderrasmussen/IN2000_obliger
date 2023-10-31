@@ -8,12 +8,13 @@ import random
 #python3 hovedprogram.py input_100 output_100
 #python3 hovedprogram.py input_1000 output_1000
 #python3 hovedprogram.py input_10000 output_10000 
-
+#python3 hovedprogram.py < inputs/input_100000 | cmp - outputs/output_100000
+#python3 hovedprogram.py < inputs/input_10000 | cmp - outputs/output_10000
 #python3 hovedprogram.py < inputs/input_1000 | cmp - outputs/output_1000
 #python3 hovedprogram.py < inputs/input_100 | cmp - outputs/output_100
 #python3 hovedprogram.py < inputs/input_10 | cmp - outputs/output_10
 
-#python3 hovedprogram.py < inputs/eksempel_input
+#python3 hovedprogram.py < inputs/eksempel_input 
 
 def main(): 
     inpFile = open("inputs/"+str(sys.argv[1]), "r")
