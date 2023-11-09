@@ -1,6 +1,8 @@
 from hashSet import *
 
 #python3 debug.py < inputs/input_1000 | cmp - outputs/output_1000
+#python3 debug.py < inputs/input_100 | cmp - outputs/output_100
+#python3 debug.py < inputs/input_10 | cmp - outputs/output_10
 #python3 hovedprogram.py < inputs/input_100 | cmp - outputs/output_100
 #python3 hovedprogram.py < inputs/input_10 | cmp - outputs/output_10
 
@@ -20,6 +22,8 @@ for i in range(antallLinjer):
             print("outline: "+str(outLine)+", inserting "+str(tall))
             print(hashset.Array)
         hashset.insert(tall)
+        if outLine >=10 and outLine <= 12:
+            print("after insert:")
         
     elif "size" == inn[0].strip():
         outLine+=1

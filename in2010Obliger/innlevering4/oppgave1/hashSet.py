@@ -50,10 +50,6 @@ class hashSet():
 
     def contains(self, n):
         
-        if n in self.Array:
-            return True
-        return False
-        
         i = self.Hash_function(n)
 
         while self.Array[i]!= None:

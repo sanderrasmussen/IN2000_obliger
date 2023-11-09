@@ -1,1 +1,0 @@
-jeg hadde en logisk error i fill_gap hvor jeg ikke sammenliknet hash verdiene med posision men isteden sammenliknet posisjon med fylle posiosjonen
